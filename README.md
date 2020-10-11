@@ -1,5 +1,5 @@
-# Desafio das Transações
-> Desafio técnico proposto em java pela Pismo. Foi utilizado o Spring Boot/JPA para construção do projeto.
+# Desafio - Transações
+> Desafio técnico proposto em Java pela Pismo. Foi utilizado o Spring Boot/JPA para construção do projeto.
 
 
 
