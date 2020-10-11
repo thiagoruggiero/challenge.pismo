@@ -1,5 +1,7 @@
 package com.pismo.challenge.entity;
 
+import com.pismo.challenge.enums.OperationsTypesEnum;
+
 import javax.persistence.*;
 import java.util.Date;
 
@@ -10,6 +12,7 @@ public class Transaction {
     private Long id;
     @ManyToOne
     private Account account;
+    private OperationsTypesEnum operationType;
     private Double amount;
     private Date eventDate;
 
@@ -44,5 +47,13 @@ public class Transaction {
 
     public void setEventDate(Date eventDate) {
         this.eventDate = eventDate;
+    }
+
+    public OperationsTypesEnum getOperationType() {
+        return operationType;
+    }
+
+    public void setOperationType(OperationsTypesEnum operationType) {
+        this.operationType = operationType;
     }
 }
