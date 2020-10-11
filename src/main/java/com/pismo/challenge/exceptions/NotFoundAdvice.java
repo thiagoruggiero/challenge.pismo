@@ -11,9 +11,9 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 public class NotFoundAdvice {
 
     @ResponseBody
-    @ExceptionHandler(NotFoundExeption.class)
+    @ExceptionHandler(NotFoundAccountExeption.class)
     @ResponseStatus(HttpStatus.NOT_FOUND)
-    String notFoundHandler(NotFoundExeption ex) {
+    String notFoundHandler(NotFoundAccountExeption ex) {
         return ex.getMessage();
     }
 

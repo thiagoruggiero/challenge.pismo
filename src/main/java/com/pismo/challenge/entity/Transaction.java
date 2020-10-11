@@ -1,5 +1,6 @@
 package com.pismo.challenge.entity;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.pismo.challenge.enums.OperationsTypesEnum;
 
 import javax.persistence.*;
@@ -10,8 +11,9 @@ public class Transaction {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private Long id;
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private Account account;
+    private long accountID;
     private OperationsTypesEnum operationType;
     private Double amount;
     private Date eventDate;
@@ -55,5 +57,13 @@ public class Transaction {
 
     public void setOperationType(OperationsTypesEnum operationType) {
         this.operationType = operationType;
+    }
+
+    public long getAccountID() {
+        return accountID;
+    }
+
+    public void setAccountID(long accountID) {
+        this.accountID = accountID;
     }
 }
