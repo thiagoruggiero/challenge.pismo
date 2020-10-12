@@ -13,6 +13,11 @@ Maven
 mvnw spring-boot:run
 ```
 
+## URL base
+```sh
+http://localhost:8080
+```
+
 ## POST em  /accounts
 ```sh
 {
