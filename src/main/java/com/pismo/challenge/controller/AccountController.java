@@ -2,26 +2,26 @@ package com.pismo.challenge.controller;
 
 import com.pismo.challenge.entity.Account;
 import com.pismo.challenge.exceptions.NotFoundAccountExeption;
-import com.pismo.challenge.repository.AccountRepository;
+import com.pismo.challenge.service.AccountService;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class AccountController {
 
-    private final AccountRepository repository;
+    private final AccountService service;
 
-    public AccountController(AccountRepository repository) {
-        this.repository = repository;
+    public AccountController(AccountService service) {
+        this.service = service;
     }
 
     @PostMapping("/accounts")
     Account newAccount(@RequestBody Account newAccount) {
-        return repository.save(newAccount);
+        return service.newAccount(newAccount);
     }
 
     @GetMapping("/accounts/{id}")
     Account one(@PathVariable Long id) {
-        return repository.findById(id).orElseThrow(() -> new NotFoundAccountExeption(id));
+        return service.findById(id);
     }
 
 
