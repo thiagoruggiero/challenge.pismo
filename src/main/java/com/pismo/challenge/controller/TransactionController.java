@@ -17,7 +17,7 @@ public class TransactionController {
     }
 
     @PostMapping("/transactions")
-    Transaction newTransaction(@RequestBody Transaction newTransaction) {
+    Transaction newTransaction(@RequestBody Transaction newTransaction) throws Exception {
         return transactionService.newTransaction(newTransaction);
     }
 

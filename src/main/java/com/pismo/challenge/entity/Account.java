@@ -9,6 +9,9 @@ public class Account {
     private Long id;
     @Column(nullable = false)
     private String documentNumber;
+    @Column(nullable = false)
+    private Double availableCreditLimit;
+
 
     public Long getId() {
         return id;
@@ -24,5 +27,13 @@ public class Account {
 
     public void setDocumentNumber(String documentNumber) {
         this.documentNumber = documentNumber;
+    }
+
+    public Double getAvailableCreditLimit() {
+        return availableCreditLimit;
+    }
+
+    public void setAvailableCreditLimit(Double availableCreditLimit) {
+        this.availableCreditLimit = availableCreditLimit;
     }
 }
