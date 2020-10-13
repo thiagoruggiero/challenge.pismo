@@ -2,6 +2,7 @@ package com.pismo.challenge;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.pismo.challenge.entity.Account;
+import com.pismo.challenge.service.AccountService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -21,11 +22,12 @@ class ChallengeApplicationTests {
 
 	@Autowired
 	private MockMvc mockMvc;
+	private final String VALID_DOCUMENT_NUMBER="123456";
 
 	@Test
 	public void GetAccountTest() throws Exception {
 		Account account = new Account();
-		account.setDocumentNumber("12345");
+		account.setDocumentNumber(VALID_DOCUMENT_NUMBER);
 		mockMvc.perform(MockMvcRequestBuilders.post("/accounts")
 				.content(asJsonString(account))
 				.contentType(MediaType.APPLICATION_JSON)
